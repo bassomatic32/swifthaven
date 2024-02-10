@@ -1,0 +1,28 @@
+{
+	"configurations": [
+		{
+			"type": "lldb",
+			"request": "launch",
+			"sourceLanguages": [
+				"swift"
+			],
+			"args": [],
+			"cwd": "${workspaceFolder:swifthaven}",
+			"name": "Debug swifthaven",
+			"program": "${workspaceFolder:swifthaven}/.build/debug/swifthaven",
+			"preLaunchTask": "swift: Build Debug swifthaven"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"sourceLanguages": [
+				"swift"
+			],
+			"args": [],
+			"cwd": "${workspaceFolder:swifthaven}",
+			"name": "Release swifthaven",
+			"program": "${workspaceFolder:swifthaven}/.build/release/swifthaven",
+			"preLaunchTask": "swift: Build Release swifthaven"
+		}
+	]
+}
