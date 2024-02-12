@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "swifthaven",
 	dependencies: [
-        .package(url: "https://github.com/pakLebah/ANSITerminal", from: "0.0.3"),
+        .package(url: "https://github.com/pakLebah/ANSITerminal", from: "0.0.3"),		
     ],	
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
