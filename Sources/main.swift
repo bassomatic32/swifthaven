@@ -17,7 +17,7 @@ extension Collection {
 	}
 }
 
-let ABANDON_THRESHOLD = 50000
+let ABANDON_THRESHOLD = 500000
 
 enum Rank: UInt8 {
 	case ace = 1
@@ -577,7 +577,7 @@ class Game {
 			}			
 		}
 
-		// allBoardMoves.sort(by: { $0.target.type.rawValue > $1.target.type.rawValue})
+		allBoardMoves.sort(by: { $0.target.type.rawValue < $1.target.type.rawValue})
 
 		// play every move recorded for this configuration.
 		for lm in allBoardMoves {			
@@ -605,7 +605,7 @@ class Game {
 			self.moveCard(source: m.source,target: m.target,extent: m.extent)
 			if m.extent <= 1 {
 				self.print(title: "Replay     ") ;
-				Thread.sleep(forTimeInterval: 0.1)
+				Thread.sleep(forTimeInterval: 0.05)
 			}
 		}
 
@@ -645,13 +645,13 @@ class Game {
 		moveTo(offsetY+2,50);
 		write("Games Played \(tally.totalGames)")
 		moveTo(offsetY+4,50);
-		write("Winnablle: \(tally.winnable)  Losers: \(tally.losers)  Abandoned \(tally.abandoned)")
+		write("Winnablle: \(tally.winnable)  Losers: \(tally.losers)  Abandoned \(tally.abandoned)      ")
 		moveTo(offsetY+6,50)
-		write("Stack Size \(stackSize)")
+		write("Stack Size \(stackSize)    ")
 		moveTo(offsetY+8,50)
-		write("Total Moves \(totalMoves)")
+		write("Total Moves \(totalMoves)           ")
 		moveTo(offsetY+10,50)
-		write("Unique Boards: \(boardSet.count)  Collisions: \(repeatesAvoided) ")
+		write("Unique Boards: \(boardSet.count)  Collisions: \(repeatesAvoided)       ")
 		
 	
 	}		
